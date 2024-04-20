@@ -50,7 +50,7 @@ pipeline{
                 sshPublisher(
                     publishers:[
                         sshPublisherDesc(
-                            configName: "Prod", 
+                            configName: "aleksio-server", 
                             transfers:[
                                 sshTransfer(sourceFiles: "${params.FILE_NAME}")
                             ]
