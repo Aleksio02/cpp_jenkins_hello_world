@@ -10,7 +10,7 @@ pipeline{
         }    
         stage('Build executable file'){
             steps{
-                sh 'g++ main.cpp -o main
+                sh 'g++ main.cpp -o main'
             }
         }
         stage('Application Launch Test'){
