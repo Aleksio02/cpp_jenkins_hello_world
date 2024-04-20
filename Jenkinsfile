@@ -45,6 +45,20 @@ pipeline{
                 sh """./${params.FILE_NAME}"""
             }
         }
+        stage('Sending artifact to Prod'){
+            steps{
+                sshPublisher(
+                    publishers:[
+                        sshPublisherDesc(
+                            configName: "Prod", 
+                            transfers:[
+                                sshTransfer(sourceFiles: "${params.FILE_NAME}")
+                            ]
+                        )
+                    ]
+                )
+            }
+        }
     }
     post{
         success{
