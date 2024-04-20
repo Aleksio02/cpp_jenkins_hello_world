@@ -15,7 +15,7 @@ pipeline{
         }    
         stage('Build executable file'){
             steps{
-                sh """g++ main.cpp -o ${params.FILE_NAME}"""
+                sh """g++ app.cpp -o ${params.FILE_NAME}"""
             }
         }
         stage('Run Unit Tests'){        
